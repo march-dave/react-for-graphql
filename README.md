@@ -1,4 +1,4 @@
-# react-for-heroku
+# react-for-graphql
 A simple deployment ready webpack-react application for heroku
 
 ## Instructions
