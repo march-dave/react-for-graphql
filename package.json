@@ -3,6 +3,9 @@
     "version": "1.0.0",
     "description": "",
     "main": "index.js",
+    "engines": {
+        "node": "10.11.0"
+    },
     "scripts": {
         "build": "rimraf dist/ && babel/node ./ --out-dir dist/ --ignore ./node_modules,./.babelrc,./package.json,./npm-debug.log --copy-files",
         "dev": "webpack-dev-server --mode development --open",
