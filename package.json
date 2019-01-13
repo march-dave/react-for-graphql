@@ -8,7 +8,7 @@
     },
     "scripts": {
         "dev": "webpack-dev-server --mode development --open",
-        "start": "node --watch server --exec babel-node -- index.js",
+        "start": "node server.js",
         "heroku-postbuild": "webpack -p"
     },
     "author": "Dave Lee",
