@@ -4,6 +4,7 @@
     "description": "",
     "main": "index.js",
     "scripts": {
+        "build": "rimraf dist/ && babel/node ./ --out-dir dist/ --ignore ./node_modules,./.babelrc,./package.json,./npm-debug.log --copy-files",
         "dev": "webpack-dev-server --mode development --open",
         "start": "babel-node server.js",
         "heroku-postbuild": "webpack -p"
@@ -11,6 +12,7 @@
     "author": "Dave Lee",
     "license": "MIT",
     "devDependencies": {
+        "@babel/cli": "^7.2.3",
         "@babel/core": "^7.2.2",
         "@babel/node": "^7.2.2",
         "@babel/plugin-proposal-class-properties": "^7.2.3",
