@@ -3,19 +3,16 @@
     "version": "1.0.0",
     "description": "",
     "main": "index.js",
-    "engines": {
-        "node": "10.11.0"
-    },
     "scripts": {
         "dev": "webpack-dev-server --mode development --open",
-        "start": "node server.js",
-        "build": "rimraf dist/ && babel ./ --out-dir dist/ --ignore ./node_modules,./.babelrc,./package.json,./npm-debug.log --copy-files",
+        "start": "babel-node server.js",
         "heroku-postbuild": "webpack -p"
     },
     "author": "Dave Lee",
     "license": "MIT",
     "devDependencies": {
         "@babel/core": "^7.2.2",
+        "@babel/node": "^7.2.2",
         "@babel/plugin-proposal-class-properties": "^7.2.3",
         "@babel/preset-env": "^7.2.3",
         "@babel/preset-react": "^7.0.0",

@@ -1,5 +1,5 @@
 Arguments: 
-  /Users/ysangy/.nvm/versions/node/v8.12.0/bin/node /usr/local/Cellar/yarn/1.12.3/libexec/bin/yarn.js install
+  /Users/ysangy/.nvm/versions/node/v8.12.0/bin/node /usr/local/Cellar/yarn/1.12.3/libexec/bin/yarn.js add --dev babel/cli@latest
 
 PATH: 
   /Library/Frameworks/Python.framework/ <Versi></Versi>ons/3.6/bin:/Library/Frameworks/Python.framework/Versions/3.7/bin:/Users/ysangy/.nvm/versions/node/v8.12.0/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Frameworks/Mono.framework/Versions/Current/Commands:/Library/Frameworks/Python.framework/ <Versi></Versi>ons/3.6/bin:/Library/Frameworks/Python.framework/Versions/3.7/bin:/Users/ysangy/Library/Android/sdk/tools:/Users/ysangy/Library/Android/sdk/platform-tools:/Users/ysangy/Library/Android/sdk/tools:/Users/ysangy/Library/Android/sdk/platform-tools
@@ -14,13 +14,17 @@ Platform:
   darwin x64
 
 Trace: 
-  SyntaxError: /Volumes/ExternalSSD/code/react-for-graphql/package.json: Unexpected token / in JSON at position 105
-      at JSON.parse (<anonymous>)
-      at /usr/local/Cellar/yarn/1.12.3/libexec/lib/cli.js:1631:59
-      at Generator.next (<anonymous>)
-      at step (/usr/local/Cellar/yarn/1.12.3/libexec/lib/cli.js:304:30)
-      at /usr/local/Cellar/yarn/1.12.3/libexec/lib/cli.js:315:13
-      at <anonymous>
+  Error: https://registry.yarnpkg.com/babel%2fcli: Request "https://registry.yarnpkg.com/babel%2fcli" returned a 405
+      at Request.params.callback [as _callback] (/usr/local/Cellar/yarn/1.12.3/libexec/lib/cli.js:65903:18)
+      at Request.self.callback (/usr/local/Cellar/yarn/1.12.3/libexec/lib/cli.js:129018:22)
+      at emitTwo (events.js:126:13)
+      at Request.emit (events.js:214:7)
+      at Request.<anonymous> (/usr/local/Cellar/yarn/1.12.3/libexec/lib/cli.js:129990:10)
+      at emitOne (events.js:116:13)
+      at Request.emit (events.js:211:7)
+      at IncomingMessage.<anonymous> (/usr/local/Cellar/yarn/1.12.3/libexec/lib/cli.js:129912:12)
+      at Object.onceWrapper (events.js:313:30)
+      at emitNone (events.js:111:20)
 
 npm manifest: 
   {
@@ -28,12 +32,10 @@ npm manifest:
       "version": "1.0.0",
       "description": "",
       "main": "index.js",
-      // "engines": {
-      //   "node": "10.11.0"
-      // },
       "scripts": {
           "dev": "webpack-dev-server --mode development --open",
           "start": "node server.js",
+          "build": "rimraf dist/ && babel ./ --out-dir dist/ --ignore ./node_modules,./.babelrc,./package.json,./npm-debug.log --copy-files",
           "heroku-postbuild": "webpack -p"
       },
       "author": "Dave Lee",
@@ -43,6 +45,7 @@ npm manifest:
           "@babel/plugin-proposal-class-properties": "^7.2.3",
           "@babel/preset-env": "^7.2.3",
           "@babel/preset-react": "^7.0.0",
+          "babel": "^6.23.0",
           "babel-loader": "^8.0.4",
           "css-loader": "^0.28.11",
           "html-webpack-plugin": "^3.2.0",
@@ -1330,6 +1333,11 @@ Lockfile:
     dependencies:
       core-js "^2.4.0"
       regenerator-runtime "^0.11.0"
+  
+  babel@^6.23.0:
+    version "6.23.0"
+    resolved "https://registry.yarnpkg.com/babel/-/babel-6.23.0.tgz#d0d1e7d803e974765beea3232d4e153c0efb90f4"
+    integrity sha1-0NHn2APpdHZb7qMjLU4VPA77kPQ=
   
   backo2@^1.0.2:
     version "1.0.2"
