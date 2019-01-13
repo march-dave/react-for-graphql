@@ -8,7 +8,8 @@
     },
     "scripts": {
         "dev": "webpack-dev-server --mode development --open",
-        "start": "node server.js",
+        "start": "yarn run build && node dist/index.js",
+        "build": "rimraf dist/ && @babel ./ --out-dir dist/ --ignore ./node_modules,./.babelrc,./package.json,./npm-debug.log --copy-files",
         "heroku-postbuild": "webpack -p"
     },
     "author": "Dave Lee",
