@@ -4,7 +4,7 @@
     "description": "",
     "main": "index.js",
     "engines": {
-        "node": "10.11.0"
+        "node": "10.15.0"
     },
     "scripts": {
         "build": "rimraf dist/ && babel/node ./ --out-dir dist/ --ignore ./node_modules,./.babelrc,./package.json,./npm-debug.log --copy-files",
