@@ -7,9 +7,9 @@
         "node": "10.15.0"
     },
     "scripts": {
-        "build": "rimraf dist/ && babel/node ./ --out-dir dist/ --ignore ./node_modules,./.babelrc,./package.json,./npm-debug.log --copy-files",
+        "build": "rimraf dist/ && babel ./ --out-dir dist/ --ignore ./node_modules,./.babelrc,./package.json,./npm-debug.log --copy-files",
         "dev": "webpack-dev-server --mode development --open",
-        "start": "babel-node server.js",
+        "start": "node ./dist/server.js",
         "heroku-postbuild": "webpack -p"
     },
     "author": "Dave Lee",
